@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark row" *ngIf="userinfo">
+    <div class="col-md-11"></div>
+    <div class="col-md-1 navbar-nav nav-fit">
+        <a class="nav-item nav-link nav-right" (click)="logout()">Logout</a>
+    </div>
+</nav>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-9">
+                    <h2>Delivery Details</h2>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-label-group">
+                        <input type="date" class="form-control srch-input" [(ngModel)]="searchText" placeholder="Search" (keyup.enter)="searchDeliveryList()">
+                    </div>
+                </div>
+            </div>
+            <table class="table table-stripped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let dlist of deliveryList">
+                        <td>{{dlist.itm_name}}</td>
+                        <td>{{dlist.dlvry_addr}}</td>
+                        <td>{{dlist.dlvry_date}}</td>
+                        <td *ngIf="!dlist.eFlag">{{dlist.dlvry_status}}</td>
+                        <td *ngIf="dlist.eFlag">
+                            <select [(ngModel)]="dlist.dlvry_status">
+                    <option>out for delivery</option>
+                    <option>delivered</option>
+                    <option>not delivered</option>
+                  </select>
+                        </td>
+                        <td *ngIf="!dlist.eFlag"><button (click)="enableEditFlag(dlist)">Edit</button></td>
+                        <td *ngIf="dlist.eFlag"><button (click)="changeStatus(dlist)">Save</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.container {
+    width: 100%;
+}
+
+.container .row .login-form {
+    margin-top: 10%;
+    border: 1px solid #747474;
+    padding: 30px;
+}

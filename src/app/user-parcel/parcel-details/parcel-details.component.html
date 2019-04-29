@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Parcel Details</h2>
+    <p>Parcels Details of User</p>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Date</th>
+                <th>Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let dlist of deliveryList">
+                <td>{{dlist.itm_name}}</td>
+                <td>{{dlist.dlvry_addr}}</td>
+                <td>{{dlist.dlvry_date}}</td>
+                <td>{{dlist.dlvry_status}}</td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>
